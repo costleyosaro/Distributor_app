@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Table</title>
+    <link rel="stylesheet" href="{% static 'css/Care.css' %}">
+</head>
+<body>
+
+    <h2 class="listheader">Care List</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Product Name</th>
+                <th>Rating</th>
+                <th>Price</th>
+                <th>Available Stock</th>
+                <th>Quantity</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="productTable"></tbody>
+    </table>
+
+    <div id="cart"></div>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="{% url 'beverage_list' %}">Beverage List</a></li>
+            <li><a href="{% url 'food_list' %}">Food List</a></li>
+            <li><a href="{% url 'care_list' %}">Care List</a></li>
+        </ul>
+    </nav>
+
+    <button class="invoice" onclick="window.location.href='{% url 'generate_invoice' %}' ">Generate Invoice</button>
+
+    <script src="{% static 'js/Food_list.js' %}"></script>
+</body>
+</html>

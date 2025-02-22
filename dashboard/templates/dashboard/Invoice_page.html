@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice</title>
+    <link rel="stylesheet" href="{% static 'css/Invoice_page.css' %}">
+    
+</head>
+<body>
+
+<div class="invoice-container">
+    <div class="invhead">
+        <img class="invlogo" src="{% static 'images/CHIAMO_MULTITRADE-removebg-preview(1).png'%}" alt="">
+        <h2>Invoice</h2>
+    </div>
+    <p><strong>Date:</strong> <span id="invoice-date"></span></p>
+    <p><strong>Customer Name:</strong> <input type="text" id="customer-name" placeholder="Enter name"></p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Quantity</th>
+                <th>Price (₦)</th>
+                <th>Total (₦)</th>
+            </tr>
+        </thead>
+        <tbody id="invoice-items">
+            <!-- Items will be dynamically added here -->
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3" class="total">Grand Total:</td>
+                <td id="grand-total">₦0</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <div class="buttons">
+        <button class="print-btn" onclick="printInvoice()">Print Invoice</button>
+        <button class="back-btn" onclick="window.location.href='dashboard.html'">Back to Dashboard</button>
+    </div>
+</div>
+
+<script src="{% static 'js/Javascript/Invoice_page.js' %}'"></script>
+
+</body>
+</html>
